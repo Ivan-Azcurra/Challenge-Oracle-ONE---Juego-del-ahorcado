@@ -28,7 +28,7 @@ header{
     border-radius: 24px;
     background-color: #0A3871;
     color: #fff;
-    border-color: #0A3871;
+    border: none;
     font-size: 18px;
     margin-bottom: 38px;
     cursor: pointer;
@@ -127,9 +127,23 @@ header{
 /* Estilo en tablet */
 
 @media screen and (max-width: 768px) {
+    body{
+        overflow-y: hidden;
+    }
+
     header{
         top: 75px;
+        left: 0px;
     }
+
+    .ingresar-palabra{
+        margin-top: 15vh;
+        align-items: flex-start;
+        margin-left: 6vw;
+    }    
+
+
+
 }
 
 /* Estilos en mobile */
@@ -137,6 +151,18 @@ header{
 @media screen and (max-width: 375px){
     header{
         top: 24px;
-        left: 16px;
+        left: -15px;
+    }
+
+    .area-palabra{
+        width: 100%;
+    }
+
+    .ingresar-palabra-btn{
+        flex-wrap: wrap;
+    }
+
+    .btn-guardar{
+        margin-bottom: 24px;
     }
 }
