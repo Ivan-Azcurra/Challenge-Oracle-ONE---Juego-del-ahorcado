@@ -1,6 +1,7 @@
 body{
     background-color: #F3F5FC;
     overflow-x: hidden;
+    font-family: 'Inter', sans-serif
 }
 
 header{
@@ -52,6 +53,18 @@ header{
     height: 90vh;
 }
 
+.area-palabra{
+    width: 50%;
+    height: 50%;
+    background-color: #F3F5FC;
+    font-size: 32px;
+    color: #0A3871;
+}
+
+.area-palabra::placeholder{
+    color: #0A3871;
+    font-family: 'Inter', sans-serif;
+}
 
 
 /* Estilo en tablet */
