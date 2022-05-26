@@ -1,5 +1,6 @@
 body{
     background-color: #F3F5FC;
+    overflow: hidden;
 }
 
 header{
@@ -15,7 +16,7 @@ header{
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 
 .btn-dark{
@@ -39,4 +40,21 @@ header{
     background-color: inherit;
     font-size: 18px;
     color: #0A3871;
+}
+
+/* Estilo en tablet */
+
+@media screen and (max-width: 768px) {
+    header{
+        top: 75px;
+    }
+}
+
+/* Estilos en mobile */
+
+@media screen and (max-width: 375px){
+    header{
+        top: 24px;
+        left: 16px;
+    }
 }
