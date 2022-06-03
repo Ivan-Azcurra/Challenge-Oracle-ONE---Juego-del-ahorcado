@@ -48,8 +48,8 @@ header{
 
 .ingresar-palabra{
     position: absolute;
-    display: flex;
-    /* display: none; */
+    /* display: flex; */
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -121,6 +121,15 @@ header{
     border: 1px solid #0A3871;
     color: #0A3871;
     cursor: pointer;
+}
+
+.canvas{
+    display: flex;
+}
+
+#horca{
+    margin: 0 auto;
+    padding-right: 300px;
 }
 
 
