@@ -21,8 +21,8 @@ function dibujarLineas() {
 
     var ancho = 600/palabraSecreta.length;
     for(let i = 0; i < palabraSecreta.length; i++){
-        tablero.moveTo(500 + (ancho * i), 640);
-        tablero.lineTo(550 + (ancho * i), 640);
+        tablero.moveTo(500 + (ancho * i), 700);
+        tablero.lineTo(550 + (ancho * i), 700);
     }
     tablero.stroke();
     tablero.closePath();
@@ -30,14 +30,14 @@ function dibujarLineas() {
 }dibujarLineas(escojerPalabraSecreta());
 
 function escribirLetraCorrecta(posicion) {
-    tablero.font = "bold 52px Inter";
+    tablero.font = "52px Inter";
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
     tablero.fillStyle = "#0A3871";
 
     var ancho = 600/palabraSecreta.length;
-    tablero.fillText(palabraSecreta[posicion],505 + (ancho * posicion), 620);
+    tablero.fillText(palabraSecreta[posicion],505 + (ancho * posicion), 680);
 }
 
 function escribirLetraIncorrecta(letra, erroresLeft) {
@@ -47,7 +47,7 @@ function escribirLetraIncorrecta(letra, erroresLeft) {
     tablero.lineJoin = "round";
     tablero.fillStyle = "#495057";
 
-    tablero.fillText(letra, 535 +(40 * (10 - erroresLeft)), 710, 40);
+    tablero.fillText(letra, 535 +(40 * (10 - erroresLeft)), 780, 40);
 }
 
 function verficarLetraClicada(key) {
@@ -71,22 +71,26 @@ function adicionarLetraIncorrecta(letter) {
 }
 
 document.onkeydown = (e) => {
-    let letra = e.key.toUpperCase();
-    if(!verficarLetraClicada(e.key)){
-        console.log(letras);
-        if(palabraSecreta.includes(letra)){
-            console.log(letra);
-            adicionarLetraCorrecta(palabraSecreta.indexOf(letra))
-            for(let i = 0; i < palabraSecreta.length; i++){
-                if(palabraSecreta[i] === letra){
-                    escribirLetraCorrecta(i);
-                }
-            }
-        } else {
-            if (!verficarLetraClicada(e.key)) return 
+    var codigo = e.which || e.keyCode;
+    if(codigo >= 65 && codigo <= 90){
+
+        let letra = e.key.toUpperCase();
+        if(!verficarLetraClicada(e.key)){
             console.log(letras);
-            adicionarLetraIncorrecta(letra)
-            escribirLetraIncorrecta(letra, errores);
+            if(palabraSecreta.includes(letra)){
+                console.log(letra);
+                adicionarLetraCorrecta(palabraSecreta.indexOf(letra))
+                for(let i = 0; i < palabraSecreta.length; i++){
+                    if(palabraSecreta[i] === letra){
+                        escribirLetraCorrecta(i);
+                    }
+                }
+            } else {
+                if (!verficarLetraClicada(e.key)) return 
+                console.log(letras);
+                adicionarLetraIncorrecta(letra)
+                escribirLetraIncorrecta(letra, errores);
+            }
         }
     }
 };
