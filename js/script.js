@@ -5,6 +5,11 @@ let letras = [];
 let palabraCorrecta = "";
 let errores = 9;
 
+function ahorcado() {
+    
+
+
+
 function escojerPalabraSecreta() {
     var palabra = palabras[Math.floor(Math.random() * palabras.length)];
     palabraSecreta = palabra;
@@ -66,7 +71,34 @@ function adicionarLetraCorrecta(index) {
 
 function adicionarLetraIncorrecta(letter) {
     if (palabraSecreta.indexOf(letter) <= 0){
-        errores -= 1;
+        if(errores === 9){
+            dibujarPoste();
+        }
+        if(errores === 8){
+            dibujarPosteDos();
+        }
+        if(errores === 7){
+            dibujarPosteTres();
+        }
+        if(errores === 6){
+            dibujarCabeza();
+        }
+        if(errores === 5){
+            dibujarTorso();
+        }
+        if(errores === 4){
+            dibujarBrazo();
+        }
+        if(errores === 3){
+            dibujarBrazoDos();
+        }
+        if(errores === 2){
+            dibujarPierna();
+        }
+        if(errores === 1){
+            dibujarPiernaDos();
+        }
+        errores -= 1;       
     }
 }
 
@@ -95,3 +127,4 @@ document.onkeydown = (e) => {
     }
 };
 
+}

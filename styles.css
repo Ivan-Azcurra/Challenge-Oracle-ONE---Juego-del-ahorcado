@@ -10,10 +10,13 @@ header{
     left: 40px;
 }
 
+.oculto{
+    display: none;
+}
+
 .container-btn{
     position: absolute;
-    /* display: flex; */
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -48,8 +51,7 @@ header{
 
 .ingresar-palabra{
     position: absolute;
-    /* display: flex; */
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -125,6 +127,7 @@ header{
 
 .canvas{
     display: flex;
+    flex-direction: column;
 }
 
 #horca{
@@ -132,6 +135,36 @@ header{
     padding-right: 300px;
 }
 
+.btn-canvas{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-nuevo-juego{
+    min-width: 332px;
+    min-height: 67px;
+    padding: 24px;
+    background-color: #0A3871;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    margin-right: 24px;
+    cursor: pointer;
+}
+
+.btn-desistir{
+    min-width: 332px;
+    min-height: 67px;
+    padding: 24px;
+    background-color: inherit;
+    font-size: 16px;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+    cursor: pointer; 
+}
 
 /* Estilo en tablet */
 

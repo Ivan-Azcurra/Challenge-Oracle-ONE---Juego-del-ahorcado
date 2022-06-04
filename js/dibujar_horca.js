@@ -10,7 +10,7 @@ function dibujarBase(){
     tablero.lineTo(930, 550);
     tablero.stroke();
     tablero.closePath();
-}dibujarBase();
+}
 
 function dibujarPoste() {
     tablero.lineWidth = 6;
@@ -24,7 +24,7 @@ function dibujarPoste() {
     tablero.stroke();
     tablero.closePath();
 
-}dibujarPoste();
+}
 
 function dibujarPosteDos() {
     tablero.lineWidth = 6;
@@ -37,7 +37,7 @@ function dibujarPosteDos() {
     tablero.lineTo(850, 150);
     tablero.stroke();
     tablero.closePath();
-}dibujarPosteDos();
+}
 
 function dibujarPosteTres() {
     tablero.lineWidth = 6;
@@ -50,7 +50,7 @@ function dibujarPosteTres() {
     tablero.lineTo(850, 200);
     tablero.stroke();
     tablero.closePath();
-}dibujarPosteTres();
+}
 
 function dibujarCabeza() {
     tablero.lineWidth = 6;
@@ -62,9 +62,9 @@ function dibujarCabeza() {
     tablero.arc(850, 240, 40,0,Math.PI*2)
     tablero.stroke();
     tablero.closePath();
-}dibujarCabeza()
+}
 
-function torso() {
+function dibujarTorso() {
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
@@ -75,7 +75,7 @@ function torso() {
     tablero.lineTo(850, 400);
     tablero.stroke();
     tablero.closePath();
-}torso();
+}
 
 function dibujarBrazo() {
     tablero.lineWidth = 6;
@@ -88,7 +88,7 @@ function dibujarBrazo() {
     tablero.lineTo(800, 350);
     tablero.stroke();
     tablero.closePath();
-}dibujarBrazo();
+}
 
 function dibujarBrazoDos() {
     tablero.lineWidth = 6;
@@ -101,7 +101,7 @@ function dibujarBrazoDos() {
     tablero.lineTo(900, 350);
     tablero.stroke();
     tablero.closePath();
-}dibujarBrazoDos();
+}
 
 function dibujarPierna() {
     tablero.lineWidth = 6;
@@ -114,7 +114,7 @@ function dibujarPierna() {
     tablero.lineTo(800, 470);
     tablero.stroke();
     tablero.closePath();    
-}dibujarPierna();
+}
 
 function dibujarPiernaDos() {
     tablero.lineWidth = 6;
@@ -127,4 +127,9 @@ function dibujarPiernaDos() {
     tablero.lineTo(900, 470);
     tablero.stroke();
     tablero.closePath(); 
-}dibujarPiernaDos();
+}
+
+function limpiarCanvas() {
+    tablero.beginPath();
+    tablero.clearRect(0, 0, 1200, 800);
+}

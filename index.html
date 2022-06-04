@@ -16,12 +16,12 @@
         <img src="img/Logo.png" alt="Logo Alura">
     </header>
     <main>
-        <div class="container-btn">
-            <button class="btn-dark">Iniciar juego</button>
-            <button class="btn-light">Agregar nueva palabra</button>
+        <div class="container-btn" id="pantalla-principal">
+            <button class="btn-dark" id="iniciar-juego">Iniciar juego</button>
+            <button class="btn-light" id="agregar-palabra">Agregar nueva palabra</button>
         </div>
 
-        <div class="ingresar-palabra">
+        <div class="oculto" id="palabra-nueva">
             <textarea class="area-palabra" name="ingresar-palabra" id="ingresar-palabra" cols="30" rows="10" placeholder="Ingrese una palabra" maxlength="8"></textarea>
             <div class="info">
                 <img src="img/Vector.png" alt="Icono Informacion">
@@ -32,12 +32,17 @@
                 <button class="btn-cancelar">Cancelar</button>
             </div>
         </div>
-        <div id="container-canvas" class="canvas">
+        <div id="container-canvas" class="oculto">
             <canvas id="horca" height="800" width="1200"></canvas>
+            <div class="btn-canvas">
+                <button class="btn-nuevo-juego" id="btn-nuevo-juego">Nuevo juego</button>
+                <button class="btn-desistir" id="btn-desistir">Desistir</button>
+            </div>
         </div>
-        <!-- RENOMBRAR COMMIT -->
+
     </main>
     <script src="js/script.js"></script>
     <script src="js/dibujar_horca.js"></script>
+    <script src="js/navegacion.js"></script>
 </body>
 </html>
