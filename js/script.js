@@ -1,5 +1,10 @@
 let palabras = ["ALURA", "AHORCADO", "ORACLE", "HTML", "CSS", "JAVASCRIPT"];
 
+function agregarPalabra(palabraNueva) {
+    palabras.push(palabraNueva.value.toUpperCase());
+    console.log(palabras);
+}
+
 let tablero = document.getElementById("horca").getContext("2d");
 let letras = [];
 let palabraCorrecta = "";

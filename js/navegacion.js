@@ -4,7 +4,11 @@ const btnDesistir = document.getElementById("btn-desistir");
 const btnNuevoJuego = document.getElementById("btn-nuevo-juego");
 const pantallaCanvas = document.getElementById("container-canvas");
 const btnPalabraNueva = document.getElementById("agregar-palabra");
+const textAreaValue = document.getElementById("textarea");
+const btnGuardarEmpezar = document.getElementById("btn-guardar");
+const btnCancelar = document.getElementById("btn-cancelar");
 const palabraNuevaContainer = document.getElementById("palabra-nueva");
+
 
 iniciarJuego.addEventListener("click", function () {
     pantallaPrincipal.classList.remove("container-btn");
@@ -35,4 +39,13 @@ btnPalabraNueva.addEventListener("click", function () {
     palabraNuevaContainer.classList.remove("oculto");
     palabraNuevaContainer.classList.add("ingresar-palabra");
 });
+
+btnGuardarEmpezar.addEventListener("click", function () {
+    agregarPalabra(textAreaValue);
+    palabraNuevaContainer.classList.remove("ingresar-palabra");
+    palabraNuevaContainer.classList.add("oculto");
+    pantallaCanvas.classList.remove("oculto");
+    pantallaCanvas.classList.add("canvas");
+    ahorcado();
+})
 
