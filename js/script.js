@@ -1,24 +1,27 @@
 let palabras = ["ALURA", "AHORCADO", "ORACLE", "HTML", "CSS", "JAVASCRIPT"];
 
 function agregarPalabra(palabraNueva) {
-    palabras.push(palabraNueva.value.toUpperCase());
-    console.log(palabras);
+    if(palabraNueva.value != ""){
+        palabras.push(palabraNueva.value.toUpperCase());
+        textAreaValue.value = "";
+        return true;
+    } else{
+        return false;
+    }
 }
 
 let tablero = document.getElementById("horca").getContext("2d");
-let letras = [];
-let palabraCorrecta = "";
-let errores = 9;
 
 function ahorcado() {
     
-
-
+    let letras = [];
+    let palabraCorrecta = "";
+    let errores = 9;
 
 function escojerPalabraSecreta() {
     var palabra = palabras[Math.floor(Math.random() * palabras.length)];
     palabraSecreta = palabra;
-    console.log(palabraSecreta);
+    // console.log(palabraSecreta);
     return palabraSecreta;
 }
 
@@ -102,34 +105,44 @@ function adicionarLetraIncorrecta(letter) {
         }
         if(errores === 1){
             dibujarPiernaDos();
+        } 
+        if (errores === 0){
+            alert("PERDISTE!!! la palabra secreta era: " + palabraSecreta);
         }
         errores -= 1;       
     }
+    
 }
 
-document.onkeydown = (e) => {
-    var codigo = e.which || e.keyCode;
-    if(codigo >= 65 && codigo <= 90){
+ 
 
-        let letra = e.key.toUpperCase();
-        if(!verficarLetraClicada(e.key)){
-            console.log(letras);
-            if(palabraSecreta.includes(letra)){
-                console.log(letra);
-                adicionarLetraCorrecta(palabraSecreta.indexOf(letra))
-                for(let i = 0; i < palabraSecreta.length; i++){
-                    if(palabraSecreta[i] === letra){
-                        escribirLetraCorrecta(i);
+        document.onkeydown = (e) => {
+            var codigo = e.which || e.keyCode;
+            if(codigo >= 65 && codigo <= 90){
+
+                let letra = e.key.toUpperCase();
+                if(!verficarLetraClicada(e.key)){
+                    // console.log(letras);
+                    if(palabraSecreta.includes(letra)){
+                        // console.log(letra);
+                        adicionarLetraCorrecta(palabraSecreta.indexOf(letra))
+                        for(let i = 0; i < palabraSecreta.length; i++){
+                            if(palabraSecreta[i] === letra){
+                                escribirLetraCorrecta(i); 
+                                if (palabraCorrecta.length == palabraSecreta.length){
+                                    alert("HA GANADO!!!");
+                                }
+                            } 
+                            
+                        }
+                    } else {
+                        if (!verficarLetraClicada(e.key)) return 
+                        // console.log(letras);
+                        adicionarLetraIncorrecta(letra)
+                        escribirLetraIncorrecta(letra, errores);
                     }
                 }
-            } else {
-                if (!verficarLetraClicada(e.key)) return 
-                console.log(letras);
-                adicionarLetraIncorrecta(letra)
-                escribirLetraIncorrecta(letra, errores);
-            }
-        }
-    }
-};
-
+            }           
+        };
+            
 }

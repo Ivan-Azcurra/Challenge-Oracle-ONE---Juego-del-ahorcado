@@ -9,7 +9,6 @@ const btnGuardarEmpezar = document.getElementById("btn-guardar");
 const btnCancelar = document.getElementById("btn-cancelar");
 const palabraNuevaContainer = document.getElementById("palabra-nueva");
 
-
 iniciarJuego.addEventListener("click", function () {
     pantallaPrincipal.classList.remove("container-btn");
     pantallaPrincipal.classList.add("oculto");
@@ -41,11 +40,24 @@ btnPalabraNueva.addEventListener("click", function () {
 });
 
 btnGuardarEmpezar.addEventListener("click", function () {
-    agregarPalabra(textAreaValue);
+    if ( agregarPalabra(textAreaValue) === true ){
+        palabraNuevaContainer.classList.remove("ingresar-palabra");
+        palabraNuevaContainer.classList.add("oculto");
+        pantallaCanvas.classList.remove("oculto");
+        pantallaCanvas.classList.add("canvas");
+        limpiarCanvas();
+        dibujarBase();
+        ahorcado();
+    } else {
+        alert("Debe ingresar una palabra para continuar");
+    }
+});
+
+btnCancelar.addEventListener("click", function () {
     palabraNuevaContainer.classList.remove("ingresar-palabra");
     palabraNuevaContainer.classList.add("oculto");
-    pantallaCanvas.classList.remove("oculto");
-    pantallaCanvas.classList.add("canvas");
-    ahorcado();
-})
+    pantallaPrincipal.classList.remove("oculto");
+    pantallaPrincipal.classList.add("container-btn");
+    textAreaValue.value = "";
+});
 
