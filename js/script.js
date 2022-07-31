@@ -1,7 +1,6 @@
 let palabras = ["ALURA", "AHORCADO", "ORACLE", "HTML", "CSS", "JAVASCRIPT"];
 
-let anchoPantalla = document.querySelector('main');
-console.log(anchoPantalla.offsetWidth);
+
 
 
 function agregarPalabra(palabraNueva) {
